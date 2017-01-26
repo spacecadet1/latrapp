@@ -23,7 +23,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="gYP-vk-WU6" kind="show" id="4Mp-KO-mF1"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -661,6 +665,47 @@
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
         <!--Window Controller-->
+        <scene sceneID="S9l-8f-FnL">
+            <objects>
+                <windowController id="gYP-vk-WU6" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="MLv-1o-t0p">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1057"/>
+                        <toolbar key="toolbar" implicitIdentifier="D63E7EA3-2708-4DEE-BD34-25F816628376" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="i0y-9U-K26">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="B1E5A65D-133D-48FE-9068-12A54718476D" label="Pandoc Settings" paletteLabel="Pandoc Settings" tag="-1" id="q1A-XR-rh1"/>
+                                <toolbarItem implicitItemIdentifier="684B7B77-19EB-45F8-AB4C-BA215BECCD5A" label="Latexdiff Settings" paletteLabel="Latexdiff Settings" tag="-1" id="PPV-TG-ECa"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="q1A-XR-rh1"/>
+                                <toolbarItem reference="PPV-TG-ECa"/>
+                            </defaultToolbarItems>
+                        </toolbar>
+                    </window>
+                    <connections>
+                        <segue destination="4WW-53-sBj" kind="relationship" relationship="window.shadowedContentViewController" id="0bj-SH-dXj"/>
+                    </connections>
+                </windowController>
+                <customObject id="vIy-IM-JmL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-510" y="401"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IoD-8h-Wxc">
+            <objects>
+                <viewController id="4WW-53-sBj" sceneMemberID="viewController">
+                    <view key="view" id="wPs-Bj-6lT">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="qUv-rd-vMC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-510" y="810"/>
+        </scene>
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -723,7 +768,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Pandoc" identifier="1" id="90s-Dk-W3Z">
-                                        <view key="view" ambiguous="YES" id="QLR-sl-AHB">
+                                        <view key="view" id="QLR-sl-AHB">
                                             <rect key="frame" x="10" y="33" width="643" height="270"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -757,7 +802,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q7B-ge-UuU">
-                                                    <rect key="frame" x="11" y="10" width="87" height="32"/>
+                                                    <rect key="frame" x="11" y="10" width="94" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gNl-hL-4sD">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -800,7 +845,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Latexdiff" identifier="2" id="sLy-ao-nGC">
-                                        <view key="view" id="JQH-Rm-1uO">
+                                        <view key="view" ambiguous="YES" id="JQH-Rm-1uO">
                                             <rect key="frame" x="10" y="33" width="643" height="270"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -820,23 +865,29 @@
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <action selector="openPrevious:" target="XfG-lQ-9wD" id="9CK-ET-Bih"/>
+                                                    </connections>
                                                 </button>
                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tnM-Jt-Rkh">
                                                     <rect key="frame" x="17" y="197" width="611" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Multiline Label" id="dSO-Uf-9jy">
+                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" placeholderString="Select previous version" id="dSO-Uf-9jy">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Zi-UG-UYH">
-                                                    <rect key="frame" x="11" y="10" width="92" height="32"/>
+                                                    <rect key="frame" x="11" y="10" width="94" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GWv-gB-8WB">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <action selector="onLatexDiffRun:" target="XfG-lQ-9wD" id="Cqp-UG-ovq"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -878,6 +929,7 @@
                         <outlet property="lblBib" destination="OWZ-7F-dOc" id="x8c-YS-YNg"/>
                         <outlet property="lblCSL" destination="1si-ej-mIB" id="Byd-Kh-Fyx"/>
                         <outlet property="lblOutput" destination="0jm-oh-Zak" id="Hu3-2A-RhR"/>
+                        <outlet property="lblPrevious" destination="tnM-Jt-Rkh" id="Sfb-nQ-QjX"/>
                         <outlet property="lblSource" destination="3yI-WJ-S1B" id="JzU-AV-I9k"/>
                     </connections>
                 </viewController>

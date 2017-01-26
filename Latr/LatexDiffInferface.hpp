@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string>
+#include <iostream>
 
 class LatexDiffInterface{
     
@@ -21,9 +22,16 @@ class LatexDiffInterface{
 public:
     LatexDiffInterface();
     
+    std::string getSource();
+    std::string getOutput();
+    std::string getPrevious();
+    
+    void setSource(const char* sourceFile);
+    void setOutput(const char* outputFile);
+    void setPrevious(const char* previousFile);
     
     
-    void executeLatexDiff();
+    void executeLatexDiff(const char* latexdiff_location);
     
 };
 

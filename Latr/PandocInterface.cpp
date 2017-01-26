@@ -71,31 +71,12 @@ bool PandocInterface::executePandoc(const char* pandocLocation){
     
     //strCommand = preCommand+strCommand;
     system(strCommand.c_str());
-    /*if(system(strCommand.c_str()) != -1){
-        return true;
-    }
-    else{
-        return false;
-    }*/
-    /*int pid = fork();
-    if (pid!=0) {
-        //execlp ("ls", "ls", "-l", (char *)0);
-        //execlp(strCommand.c_str(), strCommand.c_str(),NULL);
-        //execlp(strCommand.c_str());
-        //execl(strCommand.c_str());
-        //execl("pandoc","pandoc",strCommand.c_str(),(char*) NULL);
-    }*/
-    
-    //execl("pandoc","pandoc",strCommand.c_str(),(char*) NULL);
-    
-    //execl(strCommand.c_str());
-    //execl(strCommand.c_str());
-    //execlp ("ls", "ls", "-l", (char *)0);
+
     return true;
 }
 
 std::string PandocInterface::getStrCommand(){
-    std::string strCommand = "pandoc -s ";
+    /*std::string strCommand = "pandoc -s ";
     strCommand += source + " ";
     
     if(bib.size()>0){
@@ -106,20 +87,9 @@ std::string PandocInterface::getStrCommand(){
         }
     }
     
-    strCommand+= "-o " + output;
+    strCommand+= "-o " + output;*/
     
-    return strCommand;
+    return NULL;
     
 }
 
-/*std::string PandocInterface::exec(const char* cmd) {
-    std::array<char, 128> buffer;
-    std::string result;
-    std::shared_ptr<FILE> pipe(popen(cmd, "r"), pclose);
-    if (!pipe) throw std::runtime_error("popen() failed!");
-    while (!feof(pipe.get())) {
-        if (fgets(buffer.data(), 128, pipe.get()) != NULL)
-            result += buffer.data();
-    }
-    return result;
-}*/

@@ -17,6 +17,7 @@
 
     // Do any additional setup after loading the view.
     pandocLocation = @"/usr/local/bin/";
+    latexdiffLocation =@"/Library/TeX/texbin/";
 }
 
 
@@ -48,6 +49,8 @@
        
         pandocInterface.setSource([selectedFileName cStringUsingEncoding:NSASCIIStringEncoding]);
         
+        latexdiffInterface.setSource([selectedFileName cStringUsingEncoding:NSASCIIStringEncoding]);
+        
         //NSLog(@"%s", pandocInterface.getSource().c_str());
         _lblSource.stringValue =[NSString stringWithCString:pandocInterface.getSource().c_str() encoding:[NSString defaultCStringEncoding]];
         
@@ -66,6 +69,8 @@
             //NSLog(@"%@", [panel URL].path);
             
             pandocInterface.setOutput([[panel URL].path cStringUsingEncoding:NSASCIIStringEncoding]);
+            latexdiffInterface.setOutput([[panel URL].path cStringUsingEncoding:NSASCIIStringEncoding]);
+            
             _lblOutput.stringValue =[NSString stringWithCString:pandocInterface.getOutput().c_str() encoding:[NSString defaultCStringEncoding]];
         }
     }];
@@ -97,5 +102,24 @@
         _lblCSL.stringValue = [panel URL].path;
         
     }
+}
+
+- (IBAction)openPrevious:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    [panel setCanChooseFiles:YES];
+    [panel setAllowedFileTypes:[NSArray arrayWithObject:@"tex"]];
+    [panel setCanChooseDirectories:NO];
+    
+    if ([panel runModal] == NSModalResponseOK){
+        NSString *selectedFileName = [panel URL].path;
+        latexdiffInterface.setPrevious([selectedFileName cStringUsingEncoding:NSASCIIStringEncoding]);
+        _lblPrevious.stringValue = [panel URL].path;
+    }
+}
+
+- (IBAction)onLatexDiffRun:(id)sender {
+    
+    latexdiffInterface.executeLatexDiff([latexdiffLocation cStringUsingEncoding:NSASCIIStringEncoding]);
+    
 }
 @end

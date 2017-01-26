@@ -16,6 +16,7 @@
     PandocInterface pandocInterface;
     LatexDiffInterface latexdiffInterface;
     NSString *pandocLocation;
+    NSString *latexdiffLocation;
 }
 @property (weak) IBOutlet NSTextField *lblBib;
 @property (weak) IBOutlet NSTextField *lblCSL;
@@ -26,5 +27,10 @@
 - (IBAction)outputLocation:(id)sender;
 - (IBAction)openBib:(id)sender;
 - (IBAction)openCSL:(id)sender;
+
+/** Latexdiff functions **/
+- (IBAction)openPrevious:(id)sender;
+- (IBAction)onLatexDiffRun:(id)sender;
+@property (weak) IBOutlet NSTextField *lblPrevious;
 @end
 
