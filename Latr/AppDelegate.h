@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  Latr
 //
-//  Created by John Redcorn on 1/24/17.
+//  Created by Amyth on 1/24/17.
 //  Copyright © 2017 Amyth. All rights reserved.
 //
 
