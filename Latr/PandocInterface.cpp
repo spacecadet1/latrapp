@@ -15,10 +15,16 @@ PandocInterface::PandocInterface(){
 
 void PandocInterface::setSource(const char* sourceFile){
     source = sourceFile;
+    std::size_t lastIndex = source.find_last_of("/\\");
+    primary_directory = source.substr(0,lastIndex);
 }
 
 std::string PandocInterface::getSource(){
     return source;
+}
+
+void PandocInterface::setDirectory(const char* directory){
+    primary_directory = directory;
 }
 
 void PandocInterface::setOutput(const char* outputFile){
@@ -48,8 +54,9 @@ bool PandocInterface::executePandoc(const char* pandocLocation){
     
     //Assume that source and output is populated
     
-    //http://stackoverflow.com/questions/21105171/system-function-not-working-c
     
+    
+    chdir(primary_directory.c_str());
     
     std::cout<<"executing Pandoc.."<<std::endl;
     

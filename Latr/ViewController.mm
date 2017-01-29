@@ -33,6 +33,10 @@
     
     pandocInterface.executePandoc([pandocLocation cStringUsingEncoding:NSASCIIStringEncoding]);
     
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Pandoc Conversion Completed."];
+    [alert runModal];
+    
 }
 
 - (IBAction)openSource:(id)sender{
@@ -45,9 +49,12 @@
     
     
     if ([panel runModal] == NSModalResponseOK){
-        NSString *selectedFileName = [panel URL].path;
-       
+        
+        NSString *selectedFileName = [[panel URL] path];
+        
         pandocInterface.setSource([selectedFileName cStringUsingEncoding:NSASCIIStringEncoding]);
+        
+       // pandocInterface.setDirectory([primary_directory cStringUsingEncoding:NSASCIIStringEncoding]);
         
         latexdiffInterface.setSource([selectedFileName cStringUsingEncoding:NSASCIIStringEncoding]);
         
@@ -120,6 +127,10 @@
 - (IBAction)onLatexDiffRun:(id)sender {
     
     latexdiffInterface.executeLatexDiff([latexdiffLocation cStringUsingEncoding:NSASCIIStringEncoding]);
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"LatexDiff Completed."];
+    [alert runModal];
     
 }
 @end

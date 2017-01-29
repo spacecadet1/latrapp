@@ -25,8 +25,12 @@ class PandocInterface{
     std::string output;
     std::string bib;
     std::string style_location;
+    std::string primary_directory;
 public:
     PandocInterface();
+    
+    void setDirectory(const char* directory);
+    std::string getPrimaryDirectory();
     
     void setSource(const char* sourceFile);
     std::string getSource();

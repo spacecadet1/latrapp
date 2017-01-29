@@ -50,7 +50,7 @@ void LatexDiffInterface::executeLatexDiff(const char* latexdiff_location){
     
     std::string strCommand = strPreCmd +"latexdiff '";
     
-    strCommand+= source + "' '" + previous + "' > '" + output +"'";
+    strCommand+= previous + "' '" + source + "' > '" + output +"'";
     
     std::cout<<strCommand<<std::endl;
     
