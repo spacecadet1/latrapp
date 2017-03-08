@@ -16,6 +16,7 @@
 		CD8D77861E373DA900A8CA2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8D77841E373DA900A8CA2D /* Main.storyboard */; };
 		CD8D778F1E37400300A8CA2D /* Paomedia-Small-N-Flat-File-text.icns in Resources */ = {isa = PBXBuildFile; fileRef = CD8D778E1E37400300A8CA2D /* Paomedia-Small-N-Flat-File-text.icns */; };
 		CD8D77921E3746BD00A8CA2D /* Paomedia-Small-N-Flat-File-code.icns in Resources */ = {isa = PBXBuildFile; fileRef = CD8D77911E3746BD00A8CA2D /* Paomedia-Small-N-Flat-File-code.icns */; };
+		CDB1A93F1E68958700C69353 /* Hopstarter-Keriyo-Emoticons-Smiley-sorry.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDB1A93E1E68958700C69353 /* Hopstarter-Keriyo-Emoticons-Smiley-sorry.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		CD8D77871E373DA900A8CA2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD8D778E1E37400300A8CA2D /* Paomedia-Small-N-Flat-File-text.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Paomedia-Small-N-Flat-File-text.icns"; sourceTree = "<group>"; };
 		CD8D77911E3746BD00A8CA2D /* Paomedia-Small-N-Flat-File-code.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Paomedia-Small-N-Flat-File-code.icns"; sourceTree = "<group>"; };
+		CDB1A93E1E68958700C69353 /* Hopstarter-Keriyo-Emoticons-Smiley-sorry.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Hopstarter-Keriyo-Emoticons-Smiley-sorry.icns"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		CD8D77901E37401300A8CA2D /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				CDB1A93E1E68958700C69353 /* Hopstarter-Keriyo-Emoticons-Smiley-sorry.icns */,
 				CD8D77911E3746BD00A8CA2D /* Paomedia-Small-N-Flat-File-code.icns */,
 				CD8D778E1E37400300A8CA2D /* Paomedia-Small-N-Flat-File-text.icns */,
 			);
@@ -158,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDB1A93F1E68958700C69353 /* Hopstarter-Keriyo-Emoticons-Smiley-sorry.icns in Resources */,
 				CD8D778F1E37400300A8CA2D /* Paomedia-Small-N-Flat-File-text.icns in Resources */,
 				CD8D77921E3746BD00A8CA2D /* Paomedia-Small-N-Flat-File-code.icns in Resources */,
 				CD8D77831E373DA900A8CA2D /* Assets.xcassets in Resources */,
